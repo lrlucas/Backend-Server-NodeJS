@@ -15,7 +15,7 @@ app.get('/:tipo/:img',(req,res,next)=>{
            path = './assets/no-img.jpg';
         }
 
-        res.sendfile(path)  
+        res.sendfile(path)
     });
 
 });
