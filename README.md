@@ -2,6 +2,10 @@
 
 Este proyecto no se creo con el cli de express, se crearon todos manualmente
 
+## Documentacion de todas las rutas de la Api Rest
+[Documentacion de todas las rutas](https://documenter.getpostman.com/view/1152694/RWM9xX1a)
+Este enlace muestra todas las rutas que se crearon en la Api Rest (GET, POST, DELETE, UPDATE) con sus respectivos campos y los parametros que necesitan.
+
 ## Development server
 
 `npm start` para correr el servidor de desarrollo
