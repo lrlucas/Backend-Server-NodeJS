@@ -34,12 +34,8 @@ let urlDB;
 if (process.env.NODE_ENV === 'dev') {
     urlDB = 'mongodb://localhost:27017/hospitalDB';
 } else {
-    urlDB = 'mongodb://lrlucas:lucas78199719@ds243501.mlab.com:43501/hospitaldbbackend';
+    urlDB = process.env.MONGO_URI;
 } 
-
-
-/* MONGO_URI = 'mongodb://lrlucas:lucas78199719@ds243501.mlab.com:43501/hospitaldbbackend'; */
-/* urlDB = process.env.MONGO_URI; */
 
 
 
