@@ -27,7 +27,7 @@ app.get('/',(req,res,next)=>{
                 })
             }
 
-            Usuario.count({},(error,conteo)=>{
+            Usuario.countDocuments({},(error,conteo)=>{
                 res.status(200).json({
                     ok: true,
                     total:conteo,

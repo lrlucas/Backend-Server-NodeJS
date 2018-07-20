@@ -28,7 +28,7 @@ app.get('/',(req,res,next)=>{
                         errors:err
                     })
                 }
-                Hospital.count({},(error,conteo)=>{
+                Hospital.countDocuments({},(error,conteo)=>{
                     res.status(200).json({
                         ok: true,
                         total:conteo,

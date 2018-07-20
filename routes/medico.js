@@ -30,7 +30,7 @@ app.get('/',(req,res,next)=>{
                         errors:err
                     })
                 }
-                Medico.count({},(error,conteo)=>{
+                Medico.countDocuments({},(error,conteo)=>{
                     res.status(200).json({
                         ok: true,
                         total:conteo,

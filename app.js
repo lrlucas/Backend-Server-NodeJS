@@ -1,4 +1,5 @@
 // Requires
+require('./config/config');
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -40,9 +41,19 @@ var uploadRoutes = require('./routes/upload');
 var imagenesRoutes = require('./routes/imagenes');
 
 // Coneccion a la base de datos
-mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB',(err,res)=>{
+/* mongoose.connection.openUri('mongodb://localhost:27017/hospitalDB',(err,res)=>{
     if (err) throw err;
     console.log('Base de datos: \x1b[32m%s\x1b[0m',' online');
+}); */
+
+// coneccion con mongoDB
+mongoose.connect( process.env.URL_DB, { useNewUrlParser: true }, (err, res) => {
+    if (err) {
+        /* throw err */
+        console.log(`Error ${err}`)
+    } else {
+        console.log(`Base de datos Online`)
+    }
 });
 
 
@@ -60,6 +71,6 @@ app.use('/', appRoutes);
 
 // Escuchar peticiones
 
-app.listen(3000,()=>{
-    console.log('Servidor Express corriendo en el puerto 3000: \x1b[32m%s\x1b[0m',' online');
+app.listen( process.env.PORT, () => {
+    console.log(`Servidor Express corriendo en el puerto ${ process.env.PORT }: online`);
 });
